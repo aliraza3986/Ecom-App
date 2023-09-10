@@ -4,16 +4,16 @@ export default function CartViewOffCanvas({ cartItems }) {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    // Initialize the cart with totalPrice based on the initial cartItems array
+    
     const initialCart = cartItems.map((item) => ({
       ...item,
-      quantity: 1, // Set an initial quantity for each item
-      totalPrice: item.price, // Initialize totalPrice based on price
+      quantity: 1, 
+      totalPrice: item.price, 
     }));
     setCart(initialCart);
   }, [cartItems]);
 
-  // Function to increase the quantity and price of a product
+ 
   const increaseQuantity = (index) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity += 1;
@@ -21,7 +21,7 @@ export default function CartViewOffCanvas({ cartItems }) {
     setCart(updatedCart);
   };
 
-  // Function to decrease the quantity and price of a product
+  
   const decreaseQuantity = (index) => {
     const updatedCart = [...cart];
     if (updatedCart[index].quantity > 1) {
@@ -31,10 +31,10 @@ export default function CartViewOffCanvas({ cartItems }) {
     setCart(updatedCart);
   };
 
-  // Calculate the total price for each item
+
   const calculateItemTotal = (item) => item.totalPrice;
 
-  // Calculate the overall total price
+
   const total = cart.reduce((acc, item) => acc + item.totalPrice, 0);
 
   return (
