@@ -1,13 +1,13 @@
 import React from "react";
 import { allItems } from "../data/prodcutsData";
 import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.css'; // Import the Swal CSS
+import 'sweetalert2/dist/sweetalert2.css';
 
 
 
 export default function CartViewMenu({product,addToCart}) {
   const Alert = () => {
-  Swal.fire("my alert !")
+  Swal.fire("Item is Added")
   }
 
   return (
